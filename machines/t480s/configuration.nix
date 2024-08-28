@@ -21,6 +21,25 @@
   # Experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Enable xbox controller
+  hardware.xpadneo.enable = true;
+
+  hardware.bluetooth.settings = {
+    General = {
+      Privacy = "device";
+      JustWorksRepairing = "always";
+      Class = "0x000100";
+      FastConnectable = true;
+    };
+  };
+
+  boot = {
+    extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
+    extraModprobeConfig = ''
+      options bluetooth disable_ertm=Y
+    '';
+  };
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
