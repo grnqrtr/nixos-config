@@ -47,6 +47,8 @@ in
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
+    #
+    # Add stable package like this: stablePkgs.neovim
     xclip
     gimp-with-plugins
     discord
