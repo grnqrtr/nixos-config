@@ -147,6 +147,7 @@
   #  wget
 
   # Common tools
+  appimage-run
   tree
   zip
   unzip
@@ -192,6 +193,9 @@
 
   # Enable Flatpak
   services.flatpak.enable = true;
+
+  # Enable AppImages
+  programs.appimage.binfmt.enable = true;
 
   # Enable KDE connect
   programs.kdeconnect.enable = true;
