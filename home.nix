@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, stablePkgs, inputs, ... }:
 
 let
   myAliases = {
@@ -48,7 +48,6 @@ in
     # # "Hello, world!" when run.
     # pkgs.hello
     xclip
-    gimp-with-plugins
     discord
     audacity
     yt-dlp

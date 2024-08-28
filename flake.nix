@@ -4,6 +4,7 @@
   inputs = {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stableNixpkgs.url = "github:NixOS/nixpkgs/release-24.05";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -14,10 +15,11 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, stableNixpkgs, home-manager, nixos-hardware, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    stablePkgs = import stableNixpkgs { inherit system; };
   in
   {
     
@@ -34,7 +36,7 @@
     homeConfigurations = {
       grnqrtr = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = { inherit stablePkgs inputs; };
         modules = [ ./home.nix ];
       };
     };
