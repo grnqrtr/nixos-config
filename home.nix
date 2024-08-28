@@ -48,6 +48,7 @@ in
     # # "Hello, world!" when run.
     # pkgs.hello
     xclip
+    gimp-with-plugins
     discord
     audacity
     yt-dlp
