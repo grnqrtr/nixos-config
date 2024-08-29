@@ -162,11 +162,16 @@
   gnomeExtensions.pop-shell
   pop-icon-theme
 
-  #Trezor & pass
+  # Trezor & pass
   trezor_agent
   (pass.withExtensions (ext: with ext; [ pass-otp pass-genphrase pass-update ]))
   (python311.withPackages(ps: with ps; [ base58 pyserial unidecode ]))
   wl-clipboard  # Needed for pass
+
+  # Docker
+  docker
+  docker-buildx
+  docker-compose
 
   ];
 
