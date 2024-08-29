@@ -169,9 +169,8 @@
   wl-clipboard  # Needed for pass
 
   # Docker
-  docker
-  docker-buildx
   docker-compose
+  docker-buildx
 
   ];
 
@@ -195,6 +194,15 @@
 
   # Enable Trezor bridge daemon and setup udev rules 
   services.trezord.enable = true;
+
+  # Enable docker
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
 
   # Enable Flatpak
   services.flatpak.enable = true;
