@@ -51,11 +51,15 @@ in
     # Add stable package like this: stablePkgs.neovim
     xclip
     gimp-with-plugins
-    discord
     audacity
     yt-dlp
-    telegram-desktop
     meld
+
+    # Communications
+    discord
+    telegram-desktop
+    zoom-us
+    skypeforlinux
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

@@ -160,6 +160,7 @@
   gnomeExtensions.dash-to-dock
   gnomeExtensions.thinkpad-battery-threshold
   gnomeExtensions.pop-shell
+  gnomeExtensions.appindicator
   pop-icon-theme
 
   # Trezor & pass
