@@ -71,7 +71,7 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       migu
-      noto-fonts
+      noto-fonts-cjk
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
     ];
@@ -195,6 +195,13 @@
 
   # Enable Trezor bridge daemon and setup udev rules 
   services.trezord.enable = true;
+
+  # Platformio udev rules
+
+#  services.udev.packages = [ 
+#    pkgs.platformio-core
+#    pkgs.openocd
+#  ];
 
   # Enable docker
   virtualisation.docker = {
