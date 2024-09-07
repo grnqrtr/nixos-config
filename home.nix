@@ -104,6 +104,21 @@ in
     userSettings = { "platformio-ide.useBuiltinPIOCore" = false; };
   };
 
+  xdg = {
+    enable = true;
+    desktopEntries = {
+      pico-8 = {
+        name = "Pico-8";
+        exec = "${pkgs.bash}/bin/bash -c \"nix-shell ${config.home.homeDirectory}/.nixos-config/nix-shells/pico8.nix\"";
+        icon = "${config.home.homeDirectory}/Apps/pico-8/lexaloffle-pico8.png";
+        type = "Application";
+        categories = [ "X-Programming" "Game" ];
+        comment = "PICO-8 Fantasy Console";
+        terminal = false;
+      };
+    };
+  };
+
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
