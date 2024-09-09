@@ -51,7 +51,6 @@ in
     #
     # Add stable package like this: stablePkgs.neovim
     xclip
-    gimp-with-plugins
     audacity
     yt-dlp
     meld
@@ -96,6 +95,18 @@ in
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+  };
+
+  services.flatpak = {
+    enableModule = true;
+    remotes = {
+      "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+      "flathub-beta" = "https://dl.flathub.org/beta-repo/flathub-beta.flatpakrepo";
+    };
+    packages = [
+      "flathub:app/org.gimp.GIMP//stable"
+      "flathub:runtime/org.gimp.GIMP.Plugin.Resynthesizer//2-40"
+    ];
   };
 
   programs.zsh = {

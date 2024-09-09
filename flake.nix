@@ -11,11 +11,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
   };
 
-  outputs = { self, nixpkgs, stableNixpkgs, home-manager, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, stableNixpkgs, home-manager, nixos-hardware, flatpaks, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -37,7 +38,10 @@
       grnqrtr = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit stablePkgs inputs; };
-        modules = [ ./home.nix ];
+        modules = [
+          flatpaks.homeManagerModules.default
+          ./home.nix
+        ];
       };
     };
   };
