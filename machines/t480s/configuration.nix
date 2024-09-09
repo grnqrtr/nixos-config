@@ -169,10 +169,6 @@
   (python311.withPackages(ps: with ps; [ base58 pyserial unidecode ]))
   wl-clipboard  # Needed for pass
 
-  # Docker
-  docker-compose
-  docker-buildx
-
   ];
 
   # Set environment variables here
@@ -195,22 +191,6 @@
 
   # Enable Trezor bridge daemon and setup udev rules 
   services.trezord.enable = true;
-
-  # Platformio udev rules
-
-#  services.udev.packages = [ 
-#    pkgs.platformio-core
-#    pkgs.openocd
-#  ];
-
-  # Enable docker
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-  };
 
   # Enable Flatpak
   services.flatpak.enable = true;
