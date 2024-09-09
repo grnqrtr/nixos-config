@@ -65,6 +65,7 @@ in
     # Games
     shipwright
     wargus
+    (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 ]; }) # Minecraft launcher
 #    sm64ex
 #    sm64ex-coop
 
