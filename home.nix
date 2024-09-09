@@ -6,6 +6,7 @@ let
     ll = "ls -l";
     la = "ls -la";
     ".." = "cd ..";
+    config = "cd /home/grnqrtr/.nixos-config";
     flake-update = "nix flake update /home/grnqrtr/.nixos-config/";
     home-switch = "home-manager switch --flake /home/grnqrtr/.nixos-config/";
     nix-rebuild = "sudo nixos-rebuild switch --flake /home/grnqrtr/.nixos-config/#t480s";
