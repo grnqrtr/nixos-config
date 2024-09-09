@@ -63,10 +63,11 @@ in
 
     # Games
     shipwright
+    _2ship2harkinian
     wargus
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 ]; }) # Minecraft launcher
 #    sm64ex
-#    sm64ex-coop
+    sm64ex-coop
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -121,19 +122,6 @@ in
   programs.vscode = {
     enable = true;
     userSettings = { "platformio-ide.useBuiltinPIOCore" = false; };
-  };
-
-  programs.sm64ex = {
-    enable = true;
-    settings = {
-      fullscreen = true;
-      extraCompileFlags = [
-        "BETTERCAMERA=1"
-        "NODRAWINGDISTANCE=1"
-        "EXT_OPTIONS_MENU=1"
-        "TEXTURE_FIX=1"
-      ];
-    };
   };
 
   xdg = {
