@@ -66,7 +66,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Setup Japanese fonts
+  # Setup fonts
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
@@ -74,6 +74,7 @@
       noto-fonts-cjk
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
+#      zpix-pixel-font
     ];
   };
 

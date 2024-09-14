@@ -54,10 +54,14 @@ in
     # pkgs.hello
     #
     # Add stable package like this: stablePkgs.neovim
+    
+    # Tools
     xclip
     audacity
     yt-dlp
     meld
+    sigil
+    calibre
 
     # Communications
     discord
