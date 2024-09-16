@@ -71,10 +71,12 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       migu
+      noto-fonts
+      noto-fonts-emoji
       noto-fonts-cjk
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
-#      zpix-pixel-font
+      zpix-pixel-font
     ];
   };
 
