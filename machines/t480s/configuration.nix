@@ -133,9 +133,6 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Register zsh as an available shell
   environment.shells = with pkgs; [ zsh ];
   programs.zsh.enable = true;
