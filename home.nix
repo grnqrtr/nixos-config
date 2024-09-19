@@ -76,6 +76,7 @@ in
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 ]; }) # Minecraft launcher
     sm64ex
     sm64ex-coop-renamed # Renamed binary with overlay to avoid collision with sm64ex
+    sidequest
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
