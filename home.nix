@@ -60,6 +60,12 @@ in
     audacity
     yt-dlp
     meld
+
+    # Audio/Video
+    vlc
+    audacious
+
+    # Ebooks
     sigil
     calibre
 
