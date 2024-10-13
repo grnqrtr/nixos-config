@@ -60,6 +60,7 @@ in
     audacity
     yt-dlp
     meld
+    filezilla
 
     # Audio/Video
     vlc
@@ -83,6 +84,7 @@ in
     sm64ex
     sm64ex-coop-renamed # Renamed binary with overlay to avoid collision with sm64ex
     sidequest
+    minetest
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
