@@ -61,6 +61,7 @@ in
     yt-dlp
     meld
     filezilla
+    temurin-jre-bin
     onlyoffice-bin # To install and use missing corefonts -> https://wiki.nixos.org/wiki/ONLYOFFICE
 
     # Audio/Video
