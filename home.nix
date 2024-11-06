@@ -63,6 +63,7 @@ in
     filezilla
     temurin-jre-bin
     onlyoffice-bin # To install and use missing corefonts -> https://wiki.nixos.org/wiki/ONLYOFFICE
+    chromium
 
     # Audio/Video
     vlc

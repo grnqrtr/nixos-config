@@ -127,7 +127,7 @@
   users.users.grnqrtr = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -197,6 +197,10 @@
 
   # Enable AppImages
   programs.appimage.binfmt.enable = true;
+
+  # Enable docker
+  virtualisation.docker.enable = true;
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" "armv7l-linux" ];
 
   # Enable Steam
   programs.steam = {
