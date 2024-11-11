@@ -127,6 +127,7 @@
 
     # Games
     minetest
+
     ];
   };
 
@@ -137,6 +138,13 @@
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
+
+  # Bash aliases
+  programs.bash.shellAliases = {
+    refresh = 'rm -rf ~/.nixos-config && git clone https://github.com/grnqrtr/nixos-config.git ~/.nixos-config';
+    cg = 'sudo nix-collect-garbage && nix-collect-garbage';
+    nixos-rebuild = 'sudo nixos-rebuild switch';
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
