@@ -32,6 +32,14 @@
           nixos-hardware.nixosModules.lenovo-thinkpad-t480s
         ];
       };
+
+      chromebook = stableNixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs; };
+        modules = [
+          ./machines/chromebook/configuration.nix
+        ];
+      };
+
     };
 
     homeConfigurations = {
