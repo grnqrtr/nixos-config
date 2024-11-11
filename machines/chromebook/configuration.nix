@@ -143,7 +143,7 @@
   programs.bash.shellAliases = {
     refresh = "rm -rf ~/.nixos-config && git clone https://github.com/grnqrtr/nixos-config.git ~/.nixos-config";
     cg = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && nix-collect-garbage && nix-collect-garbage -d";
-    nixos-rebuild = "sudo nixos-rebuild switch";
+    nix-rebuild = "sudo nixos-rebuild switch";
   };
 
   # Install firefox.
