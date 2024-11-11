@@ -126,7 +126,7 @@
     git
 
     # Games
-
+    minetest
     ];
   };
 
