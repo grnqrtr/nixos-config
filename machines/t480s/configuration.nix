@@ -146,6 +146,7 @@
   #  wget
 
   # Common tools
+  docker-compose
   appimage-run
   tree
   zip
@@ -199,7 +200,7 @@
 
   # Enable docker
   virtualisation.docker.enable = true;
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" "armv7l-linux" ];
+#  boot.binfmt.emulatedSystems = [ "aarch64-linux" "armv7l-linux" ]; # Enable this to build arm docker contatin.
 
   # Enable Steam
   programs.steam = {
