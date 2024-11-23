@@ -39,7 +39,7 @@
         inherit pkgs;
         extraSpecialArgs = { inherit stablePkgs inputs; };
         modules = [
-          flatpaks.homeManagerModules.default
+          flatpaks.homeManagerModules.declarative-flatpak
           ./home.nix
         ];
       };
