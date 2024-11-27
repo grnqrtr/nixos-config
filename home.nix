@@ -88,6 +88,8 @@ in
     sm64ex-coop-renamed # Renamed binary with overlay to avoid collision with sm64ex
     sidequest
     minetest
+    lutris
+    protonup-qt
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
