@@ -94,6 +94,13 @@
   services.displayManager.autoLogin.user = "grnqrtr";
   services.xserver.desktopManager.gnome.enable = true;
 
+  # Enable hyprland
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true; # recommended for most users
+    xwayland.enable = true; # Xwayland can be disabled.
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -156,6 +163,7 @@
   git
   wget
   curl
+  kitty
 
   # Gnome
   gnome-tweaks
