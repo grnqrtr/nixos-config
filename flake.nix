@@ -11,12 +11,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix.url = "github:danth/stylix";
+
     flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
   };
 
-  outputs = { self, nixpkgs, stableNixpkgs, home-manager, nixos-hardware, flatpaks, ... }@inputs:
+  outputs = { self, nixpkgs, stableNixpkgs, home-manager, stylix, nixos-hardware, flatpaks, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -40,6 +42,7 @@
         extraSpecialArgs = { inherit stablePkgs inputs; };
         modules = [
           flatpaks.homeManagerModules.declarative-flatpak
+          stylix.homeManagerModules.stylix
           ./home.nix
         ];
       };

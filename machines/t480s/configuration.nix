@@ -76,6 +76,13 @@
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       zpix-pixel-font
+
+      montserrat
+      nerd-fonts.jetbrains-mono
+      font-awesome
+      symbola
+      material-icons
+
     ];
   };
 
