@@ -119,6 +119,8 @@ in
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 ]; }) # Minecraft launcher
     sm64ex
     sm64ex-coop-renamed # Renamed binary with overlay to avoid collision with sm64ex
+    gamescope # For splitscreen
+    bubblewrap # For splitscreen
     sidequest
     minetest
     lutris
