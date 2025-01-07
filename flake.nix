@@ -12,14 +12,16 @@
     };
 
     stylix.url = "github:danth/stylix";
-    flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
     nixpkgs.follows = "nixos-cosmic/nixpkgs"; # NOTE: change "nixpkgs" to "nixpkgs-stable" to use stable NixOS release
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
   };
 
-  outputs = { self, nixpkgs, stableNixpkgs, home-manager, stylix, nixos-cosmic, nixos-hardware, flatpaks, ... }@inputs:
+  outputs = { self, nixpkgs, stableNixpkgs, home-manager, stylix, nixos-cosmic, nixos-hardware, nix-flatpak, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -49,7 +51,7 @@
         inherit pkgs;
         extraSpecialArgs = { inherit stablePkgs inputs; };
         modules = [
-          flatpaks.homeManagerModules.declarative-flatpak
+          nix-flatpak.homeManagerModules.nix-flatpak
           stylix.homeManagerModules.stylix
           ./home.nix
         ];

@@ -15,9 +15,6 @@ let
     flake-edit = "nano /home/grnqrtr/.nixos-config/flake.nix";
   };
 
-  overlays = import ./overlays.nix;
-  pkgsWithOverlays = pkgs.extend (self: super: overlays self super);
-
 in
 
 {
@@ -80,7 +77,7 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgsWithOverlays; [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -118,11 +115,9 @@ in
     _2ship2harkinian
     wargus
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 ]; }) # Minecraft launcher
-    sm64ex
-    sm64ex-coop-renamed # Renamed binary with overlay to avoid collision with sm64ex
+    sm64coopdx
     gamescope # For splitscreen
     bubblewrap # For splitscreen
-    sm64coopdx
     sidequest
     minetest
     lutris
@@ -162,12 +157,7 @@ in
       sha256 = "111e4e08510dcab77b47860208723f525769530ebfcd08c7ed09e224e9c41ff1";
     };
 
-    # Super Mario Ex Icon
-    ".config/icons/sm64ex.png".source = builtins.fetchurl {
-      url = "https://cdn2.steamgriddb.com/icon/801272ee79cfde7fa5960571fee36b9b/32/256x256.png";
-      sha256 = "21983cba2ef47f0039103276f83154da166c1d575a2da185041f5e018be0b9f5";
-    };
-    # Super Mario Ex-Coop Icon
+    # Super Mario Coop DX Icon
     ".config/icons/sm64ex-coop.png".source = builtins.fetchurl {
       url = "https://cdn2.steamgriddb.com/icon/335656f07e73e44e19221e6649796c54/32/256x256.png";
       sha256 = "d3dd82928fbc2873e7fce2db5e0470ff618f3575ad3259272c1ae5f934034a59";
@@ -175,14 +165,10 @@ in
   };
 
   services.flatpak = {
-    enableModule = true;
-    remotes = {
-      "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-      "flathub-beta" = "https://dl.flathub.org/beta-repo/flathub-beta.flatpakrepo";
-    };
+    enable = true;
     packages = [
-      "flathub:app/org.gimp.GIMP//stable"
-      "flathub:runtime/org.gimp.GIMP.Plugin.Resynthesizer//2-40"
+      "org.gimp.GIMP//stable"
+      "org.gimp.GIMP.Plugin.Resynthesizer//2-40"
     ];
   };
 
@@ -250,18 +236,9 @@ in
         comment = "N64 Port";
         terminal = false;
       };
-      sm64ex = {
-        name = "SM64 EX";
-        exec = "sm64ex";
-        icon = "${config.home.homeDirectory}/.config/icons/sm64ex.png";
-        type = "Application";
-        categories = [ "Game" "X-Port" ];
-        comment = "N64 Port";
-        terminal = false;
-      };
-      sm64ex-coop = {
-        name = "SM64 EX Coop";
-        exec = "sm64ex-coop";
+      sm64coopdx = {
+        name = "SM64 Coop DX";
+        exec = "sm64coopdx";
         icon = "${config.home.homeDirectory}/.config/icons/sm64ex-coop.png";
         type = "Application";
         categories = [ "Game" "X-Port" ];
