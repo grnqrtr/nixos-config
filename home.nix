@@ -97,6 +97,7 @@ in
     onlyoffice-bin # To install and use missing corefonts -> https://wiki.nixos.org/wiki/ONLYOFFICE
     chromium
     inkscape
+    bottles
 
     # Audio/Video
     vlc
@@ -121,6 +122,7 @@ in
     sm64ex-coop-renamed # Renamed binary with overlay to avoid collision with sm64ex
     gamescope # For splitscreen
     bubblewrap # For splitscreen
+    sm64coopdx
     sidequest
     minetest
     lutris
