@@ -88,6 +88,7 @@ in
     xclip
     audacity
     yt-dlp
+    ffmpeg
     meld
     filezilla
     temurin-jre-bin
