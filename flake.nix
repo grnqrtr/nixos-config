@@ -19,9 +19,14 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    firefox-csshacks = { 
+      url = "github:MrOtherGuy/firefox-csshacks";
+      flake = false;
+    };
+
   };
 
-  outputs = { self, nixpkgs, stableNixpkgs, home-manager, stylix, nixos-cosmic, nixos-hardware, nix-flatpak, ... }@inputs:
+  outputs = { self, nixpkgs, stableNixpkgs, home-manager, stylix, nixos-cosmic, nixos-hardware, nix-flatpak, firefox-csshacks, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};

@@ -152,6 +152,9 @@ in
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
+    ".librewolf/Default/chrome/chrome".source =
+      "${inputs.firefox-csshacks}/chrome";
+
     # Perfect Dark Icon
     ".config/icons/pd.png".source = builtins.fetchurl {
       url = "https://cdn2.steamgriddb.com/icon/64314c17210c549a854f1f1c7adce8b6/32/256x256.png";
@@ -187,8 +190,21 @@ in
     userSettings = { "platformio-ide.useBuiltinPIOCore" = false; };
   };
 
-  programs.firefox = {
+  programs.librewolf = {
     enable = true;
+    profiles.Default = {
+      settings = {
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+      };
+      userChrome = ''
+        /* Import your desired components first */
+
+        @import url(chrome/autohide_sidebar.css);
+        @import url(chrome/hide_tabs_toolbar.css);
+
+        /* Apply your custom modifications after imports */
+      '';
+    };
     policies = {
       ExtensionSettings = with builtins;
         let extension = shortId: uuid: {
