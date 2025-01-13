@@ -233,6 +233,15 @@ in
         @import url(chrome/hide_tabs_toolbar.css);
 
         /* Apply your custom modifications after imports */
+
+        #sidebar-box #sidebar-header {
+          visibility: collapse;
+        }
+
+        #sidebar-box{
+          --uc-sidebar-width: 35px;
+        }
+
       '';
     };
     policies = {
