@@ -63,6 +63,11 @@ in
     };
   };
 
+  # Workaround to set active hint color
+  dconf.settings."org/gnome/shell/extensions/pop-shell" = {
+    hint-color-rgba = "rgba(0, 255, 255, 1)";
+  };
+
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
