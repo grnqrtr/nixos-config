@@ -13,6 +13,7 @@ let
     home-edit = "nano /home/grnqrtr/.nixos-config/home.nix";
     nix-edit = "nano /home/grnqrtr/.nixos-config/machines/t480s/configuration.nix";
     flake-edit = "nano /home/grnqrtr/.nixos-config/flake.nix";
+    cg = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && nix-collect-garbage && nix-collect-garbage -d";
   };
 
 in
