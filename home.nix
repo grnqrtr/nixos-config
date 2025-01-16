@@ -121,10 +121,10 @@ in
     # Games
     shipwright
     _2ship2harkinian
-    wargus
+#    wargus
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 ]; }) # Minecraft launcher
     sm64coopdx
-    gamescope # For splitscreen
+#    gamescope # For splitscreen
     bubblewrap # For splitscreen
     sidequest
     minetest
@@ -278,7 +278,7 @@ in
   };
 
   xdg.mimeApps = {
-    enable = true;
+    enable = false;
   
     defaultApplications = {
       "text/html" = "librewolf.desktop";
