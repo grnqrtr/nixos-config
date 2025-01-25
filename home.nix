@@ -16,6 +16,24 @@ let
     cg = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && nix-collect-garbage && nix-collect-garbage -d";
   };
 
+  # Define sm64coopdx 2-player script
+  sm64coopdx-2p = pkgs.writeScriptBin "sm64coopdx-2p" ''
+    #!/usr/bin/env bash
+    mkdir -p ~/.local/share/sm64coopdx_second_player
+    bwrap --dev-bind / / --bind ~/.local/share/sm64coopdx_second_player ~/.local/share/sm64coopdx sm64coopdx & sm64coopdx
+  '';
+
+  # Define sm64coopdx 4-player script
+  sm64coopdx-4p = pkgs.writeScriptBin "sm64coopdx-4p" ''
+    #!/usr/bin/env bash
+    mkdir -p ~/.local/share/sm64coopdx_second_player
+    mkdir -p ~/.local/share/sm64coopdx_third_player
+    mkdir -p ~/.local/share/sm64coopdx_fourth_player
+    bwrap --dev-bind / / --bind ~/.local/share/sm64coopdx_second_player ~/.local/share/sm64coopdx sm64coopdx & \
+    bwrap --dev-bind / / --bind ~/.local/share/sm64coopdx_third_player ~/.local/share/sm64coopdx sm64coopdx & \
+    bwrap --dev-bind / / --bind ~/.local/share/sm64coopdx_fourth_player ~/.local/share/sm64coopdx sm64coopdx & sm64coopdx
+  '';
+
 in
 
 {
@@ -124,6 +142,8 @@ in
 #    wargus
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 ]; }) # Minecraft launcher
     sm64coopdx
+    sm64coopdx-2p
+    sm64coopdx-4p
 #    gamescope # For splitscreen
     bubblewrap # For splitscreen
     sidequest
@@ -159,6 +179,7 @@ in
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
+    # Get CSS Hacks
     ".librewolf/Default/chrome/chrome".source =
       "${inputs.firefox-csshacks}/chrome";
 
@@ -312,7 +333,7 @@ in
       };
       sm64coopdx = {
         name = "SM64 Coop DX";
-        exec = "sm64coopdx";
+        exec = "sm64coopdx-2p";
         icon = "${config.home.homeDirectory}/.config/icons/sm64ex-coop.png";
         type = "Application";
         categories = [ "Game" "X-Port" ];
