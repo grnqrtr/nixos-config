@@ -110,13 +110,9 @@ in
     
     # Tools
     xclip
-    audacity
-    yt-dlp
-    ffmpeg
     meld
     filezilla
     temurin-jre-bin
-    onlyoffice-bin # To install and use missing corefonts -> https://wiki.nixos.org/wiki/ONLYOFFICE
     chromium
     inkscape
     bottles
@@ -124,6 +120,9 @@ in
     # Audio/Video
     vlc
     audacious
+    audacity
+    yt-dlp
+    ffmpeg
 
     # Ebooks
     sigil
@@ -139,12 +138,12 @@ in
     # Games
     shipwright
     _2ship2harkinian
-#    wargus
+    wargus
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 ]; }) # Minecraft launcher
     sm64coopdx
     sm64coopdx-2p
     sm64coopdx-4p
-#    gamescope # For splitscreen
+    gamescope # For splitscreen
     bubblewrap # For splitscreen
     sidequest
     minetest
