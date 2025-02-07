@@ -116,6 +116,7 @@ in
     chromium
     inkscape
     bottles
+    anki
 
     # Audio/Video
     vlc
