@@ -295,7 +295,16 @@ in
       };
       perfectdark = {
         name = "Perfect Dark";
-        exec = "steam-run ${config.home.homeDirectory}/Apps/Roms/PerfectDark/pd";
+        exec = "steam-run \"${config.home.homeDirectory}/Games/N64/Perfect Dark PC Port/pd.x86_64\"";
+        icon = "${config.home.homeDirectory}/.config/icons/pd.png";
+        type = "Application";
+        categories = [ "Game" "X-Port" ];
+        comment = "N64 Port";
+        terminal = false;
+      };
+      perfectdarkplus = {
+        name = "Perfect Dark +";
+        exec = "steam-run \"${config.home.homeDirectory}/Games/N64/Perfect Dark PC Port/pd.jonaeru.x86_64\" --moddir mods/mod_allinone --gexmoddir mods/mod_gex --kakarikomoddir mods/mod_kakariko --darknoonmoddir mods/mod_dark_noon --log";
         icon = "${config.home.homeDirectory}/.config/icons/pd.png";
         type = "Application";
         categories = [ "Game" "X-Port" ];
