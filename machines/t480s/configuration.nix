@@ -115,13 +115,6 @@
 #  services.desktopManager.cosmic.enable = true;
 #  services.displayManager.cosmic-greeter.enable = true;
 
-  # Enable hyprland
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true; # recommended for most users
-    xwayland.enable = true; # Xwayland can be disabled.
-  };
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -185,6 +178,7 @@
   wget
   curl
   kitty
+  certbot
 
   # Gnome
   gnome-tweaks
@@ -233,7 +227,7 @@
 
   # Enable docker
   virtualisation.docker.enable = true;
-#  boot.binfmt.emulatedSystems = [ "aarch64-linux" "armv7l-linux" ]; # Enable this to build arm docker contatin.
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" "armv7l-linux" ]; # Enable this to build arm docker contatin.
 
   # Enable Steam
   programs.steam = {
