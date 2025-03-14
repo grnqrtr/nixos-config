@@ -223,6 +223,7 @@ in
     profiles.Default = {
       settings = {
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        "webgl.disabled" = false;
       };
       userChrome = ''
         /* Import your desired components first */
