@@ -42,6 +42,11 @@ in
   home.username = "grnqrtr";
   home.homeDirectory = "/home/grnqrtr";
 
+  # Import other modules
+  imports = [
+    ./home-manager/gaming/perfectdark.nix
+  ];
+
   programs.git = {
     enable = true;
     userName = "grnqrtr";
@@ -60,6 +65,7 @@ in
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Ice";
     cursor.size = 24;
+    targets.vscode.profileNames = [ "default" ];
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
@@ -183,12 +189,6 @@ in
     ".librewolf/Default/chrome/chrome".source =
       "${inputs.firefox-csshacks}/chrome";
 
-    # Perfect Dark Icon
-    ".config/icons/pd.png".source = builtins.fetchurl {
-      url = "https://cdn2.steamgriddb.com/icon/64314c17210c549a854f1f1c7adce8b6/32/256x256.png";
-      sha256 = "111e4e08510dcab77b47860208723f525769530ebfcd08c7ed09e224e9c41ff1";
-    };
-
     # Super Mario Coop DX Icon
     ".config/icons/sm64ex-coop.png".source = builtins.fetchurl {
       url = "https://cdn2.steamgriddb.com/icon/335656f07e73e44e19221e6649796c54/32/256x256.png";
@@ -215,7 +215,7 @@ in
 
   programs.vscode = {
     enable = true;
-    userSettings = { "platformio-ide.useBuiltinPIOCore" = false; };
+    profiles.default.userSettings = { "platformio-ide.useBuiltinPIOCore" = false; };
   };
 
   programs.librewolf = {
@@ -292,24 +292,6 @@ in
         type = "Application";
         categories = [ "X-Programming" "Game" ];
         comment = "PICO-8 Fantasy Console";
-        terminal = false;
-      };
-      perfectdark = {
-        name = "Perfect Dark";
-        exec = "steam-run \"${config.home.homeDirectory}/Games/N64/Perfect Dark PC Port/pd.x86_64\"";
-        icon = "${config.home.homeDirectory}/.config/icons/pd.png";
-        type = "Application";
-        categories = [ "Game" "X-Port" ];
-        comment = "N64 Port";
-        terminal = false;
-      };
-      perfectdarkplus = {
-        name = "Perfect Dark +";
-        exec = "steam-run \"${config.home.homeDirectory}/Games/N64/Perfect Dark PC Port/pd.jonaeru.x86_64\" --moddir mods/mod_allinone --gexmoddir mods/mod_gex --kakarikomoddir mods/mod_kakariko --darknoonmoddir mods/mod_dark_noon --log";
-        icon = "${config.home.homeDirectory}/.config/icons/pd.png";
-        type = "Application";
-        categories = [ "Game" "X-Port" ];
-        comment = "N64 Port";
         terminal = false;
       };
       sm64coopdx = {
