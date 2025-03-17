@@ -16,24 +16,6 @@ let
     cg = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && nix-collect-garbage && nix-collect-garbage -d";
   };
 
-  # Define sm64coopdx 2-player script
-  sm64coopdx-2p = pkgs.writeScriptBin "sm64coopdx-2p" ''
-    #!/usr/bin/env bash
-    mkdir -p ~/.local/share/sm64coopdx_second_player
-    bwrap --dev-bind / / --bind ~/.local/share/sm64coopdx_second_player ~/.local/share/sm64coopdx sm64coopdx & sm64coopdx
-  '';
-
-  # Define sm64coopdx 4-player script
-  sm64coopdx-4p = pkgs.writeScriptBin "sm64coopdx-4p" ''
-    #!/usr/bin/env bash
-    mkdir -p ~/.local/share/sm64coopdx_second_player
-    mkdir -p ~/.local/share/sm64coopdx_third_player
-    mkdir -p ~/.local/share/sm64coopdx_fourth_player
-    bwrap --dev-bind / / --bind ~/.local/share/sm64coopdx_second_player ~/.local/share/sm64coopdx sm64coopdx & \
-    bwrap --dev-bind / / --bind ~/.local/share/sm64coopdx_third_player ~/.local/share/sm64coopdx sm64coopdx & \
-    bwrap --dev-bind / / --bind ~/.local/share/sm64coopdx_fourth_player ~/.local/share/sm64coopdx sm64coopdx & sm64coopdx
-  '';
-
 in
 
 {
@@ -44,8 +26,9 @@ in
 
   # Import other modules
   imports = [
-    ./hm-modules/gaming/perfectdark.nix
     ./hm-modules/librewolf.nix
+    ./hm-modules/gaming/perfectdark.nix
+    ./hm-modules/gaming/sm64coopdx.nix
   ];
 
   programs.git = {
@@ -148,11 +131,7 @@ in
     _2ship2harkinian
     wargus
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 ]; }) # Minecraft launcher
-    sm64coopdx
-    sm64coopdx-2p
-    sm64coopdx-4p
     gamescope # For splitscreen
-    bubblewrap # For splitscreen
     sidequest
     minetest
     lutris
@@ -186,11 +165,6 @@ in
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    # Super Mario Coop DX Icon
-    ".config/icons/sm64ex-coop.png".source = builtins.fetchurl {
-      url = "https://cdn2.steamgriddb.com/icon/335656f07e73e44e19221e6649796c54/32/256x256.png";
-      sha256 = "d3dd82928fbc2873e7fce2db5e0470ff618f3575ad3259272c1ae5f934034a59";
-    };
   };
 
   services.flatpak = {
@@ -225,15 +199,6 @@ in
         type = "Application";
         categories = [ "X-Programming" "Game" ];
         comment = "PICO-8 Fantasy Console";
-        terminal = false;
-      };
-      sm64coopdx = {
-        name = "SM64 Coop DX";
-        exec = "sm64coopdx-2p";
-        icon = "${config.home.homeDirectory}/.config/icons/sm64ex-coop.png";
-        type = "Application";
-        categories = [ "Game" "X-Port" ];
-        comment = "N64 Port";
         terminal = false;
       };
     };
