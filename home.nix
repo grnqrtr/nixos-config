@@ -29,6 +29,7 @@ in
     ./hm-modules/librewolf.nix
     ./hm-modules/gaming/perfectdark.nix
     ./hm-modules/gaming/sm64coopdx.nix
+    ./hm-modules/gaming/pico8.nix
   ];
 
   programs.git = {
@@ -187,21 +188,6 @@ in
   programs.vscode = {
     enable = true;
     profiles.default.userSettings = { "platformio-ide.useBuiltinPIOCore" = false; };
-  };
-
-  xdg = {
-    enable = true;
-    desktopEntries = {
-      pico-8 = {
-        name = "Pico-8";
-        exec = "${pkgs.bash}/bin/bash -c \"nix-shell ${config.home.homeDirectory}/.nixos-config/nix-shells/pico8.nix\"";
-        icon = "${config.home.homeDirectory}/Apps/pico-8/lexaloffle-pico8.png";
-        type = "Application";
-        categories = [ "X-Programming" "Game" ];
-        comment = "PICO-8 Fantasy Console";
-        terminal = false;
-      };
-    };
   };
 
   # Home Manager can also manage your environment variables through
