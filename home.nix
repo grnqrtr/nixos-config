@@ -1,20 +1,6 @@
 { config, pkgs, stablePkgs, inputs, ... }:
 
 let
-  myAliases = {
-    cb = "xclip -selection c";
-    ll = "ls -l";
-    la = "ls -la";
-    ".." = "cd ..";
-    config = "cd /home/grnqrtr/.nixos-config";
-    flake-update = "nix flake update --flake /home/grnqrtr/.nixos-config/";
-    home-switch = "home-manager switch --flake /home/grnqrtr/.nixos-config/";
-    nix-rebuild = "sudo nixos-rebuild switch --flake /home/grnqrtr/.nixos-config/#t480s";
-    home-edit = "nano /home/grnqrtr/.nixos-config/home.nix";
-    nix-edit = "nano /home/grnqrtr/.nixos-config/machines/t480s/configuration.nix";
-    flake-edit = "nano /home/grnqrtr/.nixos-config/flake.nix";
-    cg = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && nix-collect-garbage && nix-collect-garbage -d";
-  };
 
 in
 
@@ -27,6 +13,7 @@ in
   # Import other modules
   imports = [
     ./hm-modules/librewolf.nix
+    ./hm-modules/shell/zsh.nix
     ./hm-modules/gaming/perfectdark.nix
     ./hm-modules/gaming/sm64coopdx.nix
     ./hm-modules/gaming/pico8.nix
@@ -100,7 +87,6 @@ in
     # Add stable package like this: stablePkgs.neovim
     
     # Tools
-    xclip
     meld
     filezilla
     temurin-jre-bin
@@ -174,15 +160,6 @@ in
       "org.gimp.GIMP//stable"
       "org.gimp.GIMP.Plugin.Resynthesizer//2-40"
     ];
-  };
-
-  programs.zsh = {
-    enable = true;
-    shellAliases = myAliases;
-    oh-my-zsh = {
-      enable = true;
-      theme = "bira";
-    };
   };
 
   programs.vscode = {
