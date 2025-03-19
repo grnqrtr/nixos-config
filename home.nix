@@ -38,6 +38,7 @@ in
     cursor.name = "Bibata-Modern-Ice";
     cursor.size = 24;
     targets.vscode.profileNames = [ "default" ];
+    targets.librewolf.profileNames = [ "Default" ];
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
