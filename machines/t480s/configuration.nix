@@ -18,6 +18,13 @@
   networking.hostName = "t480s"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  # Enable fwupd for firmware updates
+  services.fwupd.enable = true;
+  ## To check for and install firmware updates:
+  ## sudo fwupdmgr refresh
+  ## sudo fwupdmgr get-updates
+  ## sudo fwupdmgr update 
+
   # Experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
