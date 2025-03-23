@@ -13,6 +13,7 @@ in
   # Import other modules
   imports = [
     ./hm-modules/librewolf.nix
+    ./hm-modules/flatpak.nix
     ./hm-modules/shell/zsh.nix
     ./hm-modules/gaming/perfectdark.nix
     ./hm-modules/gaming/sm64coopdx.nix
@@ -153,14 +154,6 @@ in
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-  };
-
-  services.flatpak = {
-    enable = true;
-    packages = [
-      "org.gimp.GIMP//stable"
-      "org.gimp.GIMP.Plugin.Resynthesizer//2-40"
-    ];
   };
 
   programs.vscode = {
