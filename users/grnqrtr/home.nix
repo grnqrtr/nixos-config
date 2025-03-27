@@ -12,12 +12,12 @@ in
 
   # Import other modules
   imports = [
-    ./hm-modules/librewolf.nix
-    ./hm-modules/flatpak.nix
-    ./hm-modules/shell/zsh.nix
-    ./hm-modules/gaming/perfectdark.nix
-    ./hm-modules/gaming/sm64coopdx.nix
-    ./hm-modules/gaming/pico8.nix
+    ../../hm-modules/librewolf.nix
+    ../../hm-modules/flatpak.nix
+    ../../hm-modules/shell/zsh.nix
+    ../../hm-modules/gaming/perfectdark.nix
+    ../../hm-modules/gaming/sm64coopdx.nix
+    ../../hm-modules/gaming/pico8.nix
   ];
 
   programs.git = {
@@ -32,7 +32,7 @@ in
   # Styling Options
   stylix = {
     enable = true;
-    image = ./moon-wallpaper.jpg;
+    image = ./wallpaper-moon.jpg;
     polarity = "dark";
     opacity.terminal = 0.8;
     cursor.package = pkgs.bibata-cursors;
@@ -125,6 +125,9 @@ in
     minetest
     lutris
     protonup-qt
+
+    # Emulators
+    flycast
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

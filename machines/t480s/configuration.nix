@@ -55,6 +55,13 @@
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false; # To fix build error - "Failed to start Network Manager Wait Online."
 
+  # Scanner
+  hardware.sane.enable = true;
+  hardware.sane.extraBackends = [ pkgs.sane-airscan ];
+  services.udev.packages = [ pkgs.sane-airscan ];
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
@@ -156,7 +163,7 @@
     isNormalUser = true;
     description = "Travis";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" "scanner" "lp" ];
     packages = with pkgs; [
     #  thunderbird
     ];

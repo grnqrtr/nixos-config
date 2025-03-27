@@ -15,9 +15,9 @@
       ".." = "cd ..";
       config = "cd /home/grnqrtr/.nixos-config";
       flake-update = "nix flake update --flake /home/grnqrtr/.nixos-config/";
-      home-switch = "home-manager switch --flake /home/grnqrtr/.nixos-config/";
+      home-switch = "home-manager switch --flake /home/grnqrtr/.nixos-config/#grnqrtr";
       nix-rebuild = "sudo nixos-rebuild switch --flake /home/grnqrtr/.nixos-config/#t480s";
-      home-edit = "nano /home/grnqrtr/.nixos-config/home.nix";
+      home-edit = "nano /home/grnqrtr/.nixos-config/users/grnqrtr/home.nix";
       nix-edit = "nano /home/grnqrtr/.nixos-config/machines/t480s/configuration.nix";
       flake-edit = "nano /home/grnqrtr/.nixos-config/flake.nix";
       cg = "sudo nix-collect-garbage -d && nix-collect-garbage -d && nix-store --optimise";
