@@ -8,6 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/ibus-mozc.nix # Japanese Input. Pick ibus-mozc.nix or fcitx5-mozc.nix
+      ../../modules/canon-TS8330.nix
+      ../../modules/xbox-controller.nix
     ];
 
   # Bootloader.
@@ -27,25 +30,6 @@
 
   # Experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Enable xbox controller
-  hardware.xpadneo.enable = true;
-
-  hardware.bluetooth.settings = {
-    General = {
-      Privacy = "device";
-      JustWorksRepairing = "always";
-      Class = "0x000100";
-      FastConnectable = true;
-    };
-  };
-
-  boot = {
-    extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
-    extraModprobeConfig = ''
-      options bluetooth disable_ertm=Y
-    '';
-  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -97,23 +81,6 @@
       symbola
       material-icons
 
-    ];
-  };
-
-  # Enable Japanese input using ibus and Mozc
-#  i18n.inputMethod = {
-#    enable = true;
-#    type = "ibus";
-#    ibus.engines = with pkgs.ibus-engines; [ mozc ];
-# };
-
-  # Enable Japanese input using fcitx5 and mozc
-  i18n.inputMethod = {
-    enable = true;
-    type = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-mozc
-      fcitx5-gtk
     ];
   };
 
