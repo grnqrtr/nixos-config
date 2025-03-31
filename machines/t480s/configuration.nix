@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/ibus-mozc.nix # Japanese Input. Pick ibus-mozc.nix or fcitx5-mozc.nix
+      ../../modules/jp-input-ibus.nix # Japanese Input. Pick jp-input-ibus.nix or jp-input-fcitx5.nix
       ../../modules/canon-TS8330.nix
       ../../modules/xbox-controller.nix
     ];
