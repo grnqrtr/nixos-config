@@ -8,14 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/base.nix
       ../../modules/jp-input-ibus.nix # Japanese Input. Pick jp-input-ibus.nix or jp-input-fcitx5.nix
       ../../modules/canon-TS8330.nix
       ../../modules/xbox-controller.nix
     ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-87785bc8-18ed-4345-8710-3d0a7d124225".device = "/dev/disk/by-uuid/87785bc8-18ed-4345-8710-3d0a7d124225";
   networking.hostName = "t480s"; # Define your hostname.
@@ -28,9 +25,6 @@
   ## sudo fwupdmgr get-updates
   ## sudo fwupdmgr update 
 
-  # Experimental features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -38,31 +32,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false; # To fix build error - "Failed to start Network Manager Wait Online."
-
-  # Scanner
-  hardware.sane.enable = true;
-  hardware.sane.extraBackends = [ pkgs.sane-airscan ];
-  services.udev.packages = [ pkgs.sane-airscan ];
-  services.avahi.enable = true;
-  services.avahi.nssmdns = true;
-
-  # Set your time zone.
-  time.timeZone = "Asia/Tokyo";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
 
   # Setup fonts
   fonts = {
@@ -102,10 +71,6 @@
     variant = "";
   };
 
-  # Enable CUPS and other printer settings.
-  services.printing.enable = true;
-  services.printing.drivers = with pkgs; [ cnijfilter2 ];
-
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -139,9 +104,6 @@
   # Register zsh as an available shell
   environment.shells = with pkgs; [ zsh ];
   programs.zsh.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
