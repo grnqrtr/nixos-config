@@ -6,9 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      # Import modules.
+    [ ./hardware-configuration.nix # Include the results of the hardware scan.
       ../../modules/base.nix
       ../../modules/jp-input-ibus.nix # Japanese Input. Pick jp-input-ibus.nix or jp-input-fcitx5.nix
       ../../modules/canon-TS8330.nix

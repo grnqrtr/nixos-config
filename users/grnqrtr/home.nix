@@ -13,7 +13,8 @@ in
   # Import other modules
   imports = [
     ./style.nix
-    ../../hm-modules/librewolf.nix
+    ../../hm-modules/browser/librewolf.nix
+    ../../hm-modules/browser/chromium.nix
     ../../hm-modules/flatpak.nix
     ../../hm-modules/shell/zsh.nix
     ../../hm-modules/gaming/perfectdark.nix
@@ -54,7 +55,6 @@ in
     meld
     filezilla
     temurin-jre-bin
-    chromium
     inkscape
     bottles
     anki
