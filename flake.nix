@@ -58,7 +58,7 @@
         modules = [
           nix-flatpak.homeManagerModules.nix-flatpak
           stylix.homeManagerModules.stylix
-          ./users/grnqrtr/home.nix
+          ./homes/grnqrtr/home.nix
         ];
       };
     };

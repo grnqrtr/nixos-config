@@ -13,13 +13,13 @@ in
   # Import other modules
   imports = [
     ./style.nix
-    ../../hm-modules/browser/librewolf.nix
-    ../../hm-modules/browser/chromium.nix
-    ../../hm-modules/flatpak.nix
-    ../../hm-modules/shell/zsh.nix
-    ../../hm-modules/gaming/perfectdark.nix
-    ../../hm-modules/gaming/sm64coopdx.nix
-    ../../hm-modules/gaming/pico8.nix
+    ./librewolf.nix
+    ./chromium.nix
+    ./flatpaks.nix
+    ./zsh.nix
+    ../../hm-modules/games/perfectdark.nix
+    ../../hm-modules/games/sm64coopdx.nix
+    ../../hm-modules/games/pico8.nix
   ];
 
   programs.git = {

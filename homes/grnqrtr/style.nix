@@ -4,7 +4,7 @@
 
   stylix = {
     enable = true;
-    image = ./wallpaper-moon.jpg;
+    image = ../wallpaper-moon.jpg;
     polarity = "dark";
     opacity.terminal = 0.8;
     cursor.package = pkgs.bibata-cursors;
