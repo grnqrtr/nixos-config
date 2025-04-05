@@ -29,4 +29,19 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Services
+
+  # Enable Tailscale client daemon
+  services.tailscale.enable = true;
+
+  # Enable Flatpak
+  services.flatpak.enable = true;
+
+  # Enable AppImages
+  programs.appimage.binfmt.enable = true;
+
+  # Enable docker
+  virtualisation.docker.enable = true;
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" "armv7l-linux" ]; # Enable this to build arm docker contatin.
+
 }

@@ -162,21 +162,8 @@
 
   # List services that you want to enable:
 
-  # Enable Tailscale client daemon
-  services.tailscale.enable = true;
-
   # Enable Trezor bridge daemon and setup udev rules 
   services.trezord.enable = true;
-
-  # Enable Flatpak
-  services.flatpak.enable = true;
-
-  # Enable AppImages
-  programs.appimage.binfmt.enable = true;
-
-  # Enable docker
-  virtualisation.docker.enable = true;
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" "armv7l-linux" ]; # Enable this to build arm docker contatin.
 
   # Enable Steam
   programs.steam = {
