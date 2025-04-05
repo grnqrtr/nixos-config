@@ -21,7 +21,7 @@
       nix-edit = "nano /home/kids/.nixos-config/machines/x270/configuration.nix";
       flake-edit = "nano /home/kids/.nixos-config/flake.nix";
       cg = "sudo nix-collect-garbage -d && nix-collect-garbage -d && nix-store --optimise";
-      refresh = "sudo rm -rf /home/kids/.nixos-config && git clone https://github.com/grnqrtr/nixos-config /home/kids/.nixos-config"
+      refresh = "sudo rm -rf /home/kids/.nixos-config && git clone https://github.com/grnqrtr/nixos-config /home/kids/.nixos-config";
     };
 
     # Enable oh-my-zsh with theme
