@@ -13,8 +13,7 @@
       ../../modules/xbox-controller.nix
     ];
 
-  boot.initrd.luks.devices."luks-87785bc8-18ed-4345-8710-3d0a7d124225".device = "/dev/disk/by-uuid/87785bc8-18ed-4345-8710-3d0a7d124225";
-  networking.hostName = "t480s"; # Define your hostname.
+  networking.hostName = "x270"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable fwupd for firmware updates
@@ -59,10 +58,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # Enable COSMIC
-#  services.desktopManager.cosmic.enable = true;
-#  services.displayManager.cosmic-greeter.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -89,11 +84,11 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.grnqrtr = {
+  users.users.kids = {
     isNormalUser = true;
-    description = "Travis";
+    description = "kids";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" "scanner" "lp" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -101,7 +96,7 @@
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "grnqrtr";
+  services.displayManager.autoLogin.user = "kids";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
@@ -116,41 +111,7 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-
-  # Common tools
-  docker-compose
-  appimage-run
-  tree
-  zip
-  unzip
-  git
-  wget
-  curl
-  kitty
-  certbot
-
-  # Gnome
-  gnome-tweaks
-  gnomeExtensions.dash-to-dock
-  gnomeExtensions.thinkpad-battery-threshold
-  gnomeExtensions.pop-shell
-  gnomeExtensions.appindicator
-  gnomeExtensions.rounded-window-corners-reborn
-  gnomeExtensions.open-bar
-  pop-icon-theme
-
-  # Trezor & pass
-  trezor_agent
-  (pass.withExtensions (ext: with ext; [ pass-otp pass-genphrase pass-update ]))
-  (python311.withPackages(ps: with ps; [ base58 pyserial unidecode ]))
-  wl-clipboard  # Needed for pass
-
   ];
-
-  # Set environment variables here
-  environment.variables = {
-    GNUPGHOME = "$HOME/.gnupg/trezor";
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -162,62 +123,14 @@
 
   # List services that you want to enable:
 
-  # Enable Tailscale client daemon
-  services.tailscale.enable = true;
-
-  # Enable Trezor bridge daemon and setup udev rules 
-  services.trezord.enable = true;
-
-  # Enable Flatpak
-  services.flatpak.enable = true;
-
-  # Enable AppImages
-  programs.appimage.binfmt.enable = true;
-
-  # Enable docker
-  virtualisation.docker.enable = true;
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" "armv7l-linux" ]; # Enable this to build arm docker contatin.
-
-  # Enable Steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
-
-  # Enable KDE connect
-  programs.kdeconnect.enable = true;
-  programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
-
-  # Enable Tor
-  services.tor.enable = true;
-  services.tor.client.enable = true;
-
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-  # Open ports in the firewall.
-  networking.firewall = { 
-    enable = true;
-    allowedTCPPortRanges = [ 
-      { from = 1714; to = 1764; } # KDE Connect
-    ];  
-    allowedUDPPortRanges = [ 
-      { from = 1714; to = 1764; } # KDE Connect
-    ];  
-  };
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-
-  # Automatic Garbage Collection
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -225,6 +138,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 
 }

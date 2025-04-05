@@ -33,6 +33,8 @@
     stablePkgs = import stableNixpkgs { inherit system; };
   in
   {
+
+# Machines
     
     nixosConfigurations = {
       t480s = nixpkgs.lib.nixosSystem {
@@ -51,6 +53,18 @@
       };
     };
 
+    nixosConfigurations = {
+      x270 = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs; };
+        modules = [ 
+          ./machines/x270/configuration.nix
+          nixos-hardware.nixosModules.lenovo-thinkpad-x270
+        ];
+      };
+    };
+
+# Homes
+
     homeConfigurations = {
       grnqrtr = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
@@ -62,5 +76,18 @@
         ];
       };
     };
+
+    homeConfigurations = {
+      kids = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = { inherit stablePkgs inputs; };
+        modules = [
+          nix-flatpak.homeManagerModules.nix-flatpak
+          stylix.homeManagerModules.stylix
+          ./homes/kids/home.nix
+        ];
+      };
+    };
+
   };
 }

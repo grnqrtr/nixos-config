@@ -11,6 +11,6 @@
   hardware.sane.extraBackends = [ pkgs.sane-airscan ];
   services.udev.packages = [ pkgs.sane-airscan ];
   services.avahi.enable = true;
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns4 = true;
 
 }
