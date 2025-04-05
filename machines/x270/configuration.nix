@@ -111,6 +111,27 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+
+  # Common tools
+  docker-compose
+  appimage-run
+  tree
+  zip
+  unzip
+  git
+  wget
+  curl
+  
+  # Gnome
+  gnome-tweaks
+  gnomeExtensions.dash-to-dock
+  gnomeExtensions.thinkpad-battery-threshold
+  gnomeExtensions.pop-shell
+  gnomeExtensions.appindicator
+  gnomeExtensions.rounded-window-corners-reborn
+  gnomeExtensions.open-bar
+  pop-icon-theme
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
