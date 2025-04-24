@@ -142,7 +142,7 @@
   # Trezor & pass
   trezor_agent
   (pass.withExtensions (ext: with ext; [ pass-otp pass-genphrase pass-update ]))
-  (python311.withPackages(ps: with ps; [ base58 pyserial unidecode ]))
+  (python3.withPackages(ps: with ps; [ base58 pyserial unidecode ]))
   wl-clipboard  # Needed for pass
 
   ];
