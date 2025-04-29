@@ -94,9 +94,6 @@
     description = "Travis";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "dialout" "docker" "scanner" "lp" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
   };
 
   # Enable automatic login for the user.
@@ -139,18 +136,7 @@
   gnomeExtensions.open-bar
   pop-icon-theme
 
-  # Trezor & pass
-  trezor_agent
-  (pass.withExtensions (ext: with ext; [ pass-otp pass-genphrase pass-update ]))
-  (python3.withPackages(ps: with ps; [ base58 pyserial unidecode ]))
-  wl-clipboard  # Needed for pass
-
   ];
-
-  # Set environment variables here
-  environment.variables = {
-    GNUPGHOME = "$HOME/.gnupg/trezor";
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

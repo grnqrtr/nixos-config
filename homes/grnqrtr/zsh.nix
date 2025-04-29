@@ -9,6 +9,7 @@
 
     # Define shell aliases
     shellAliases = {
+      pass = "/home/grnqrtr/Docker/pass/run.sh";
       cb = "xclip -selection c";
       ll = "ls -l";
       la = "ls -la";
