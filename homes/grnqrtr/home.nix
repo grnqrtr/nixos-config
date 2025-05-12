@@ -87,6 +87,7 @@ in
     minetest
     lutris
     protonup-qt
+    pioneers
 
     # Emulators
     flycast
