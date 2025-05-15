@@ -68,7 +68,7 @@ in
     ffmpeg
 
     # Ebooks
-    sigil
+    stablePkgs.sigil
     calibre
 
     # Communications
@@ -76,7 +76,6 @@ in
     telegram-desktop
     signal-desktop
     zoom-us
-    skypeforlinux
 
     # Games
     shipwright
