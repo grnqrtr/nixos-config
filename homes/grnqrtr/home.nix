@@ -17,6 +17,7 @@ in
     ./chromium.nix
     ./flatpaks.nix
     ./zsh.nix
+    ../../hm-modules/tools/vscode.nix
     ../../hm-modules/games/perfectdark.nix
     ../../hm-modules/games/sm64coopdx.nix
     ../../hm-modules/games/pico8.nix
