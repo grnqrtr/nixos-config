@@ -22,6 +22,7 @@
       nix-edit = "nano /home/grnqrtr/.nixos-config/machines/t480s/configuration.nix";
       flake-edit = "nano /home/grnqrtr/.nixos-config/flake.nix";
       cg = "sudo nix-collect-garbage -d && nix-collect-garbage -d && nix-store --optimise";
+      vps = "ssh user@vps";
     };
 
     # Enable oh-my-zsh with theme
