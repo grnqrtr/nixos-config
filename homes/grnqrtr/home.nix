@@ -59,6 +59,8 @@ in
     inkscape
     bottles
     anki
+    obsidian
+    gemini-cli
 
     # Audio/Video
     vlc
