@@ -158,6 +158,14 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
 
+  # Enable Syncthing
+  services.syncthing = {
+    enable = true;
+    user = "grnqrtr";
+    dataDir = "/home/grnqrtr/Sync";    # Default folder for new synced folders
+    configDir = "/home/grnqrtr/.config/syncthing";   # Folder for Syncthing's settings and keys
+  };
+
   # Enable KDE connect
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
