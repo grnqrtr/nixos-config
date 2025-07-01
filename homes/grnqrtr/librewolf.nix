@@ -52,6 +52,7 @@
           (extension "multi-account-containers" "@testpilot-containers")
           (extension "traduzir-paginas-web" "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}") # TWP - Translate Web Pages
           (extension "windscribe" "@windscribeff")
+          (extension "web-clipper-obsidian" "clipper@obsidian.md")
         ];
 
         # To add additional extensions, find it on addons.mozilla.org, find
