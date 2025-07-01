@@ -61,6 +61,7 @@ in
     anki
     obsidian
     gemini-cli
+    syncthing
 
     # Audio/Video
     vlc
