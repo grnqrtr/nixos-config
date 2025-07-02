@@ -62,6 +62,7 @@ in
     obsidian
     gemini-cli
     syncthing
+    nh
 
     # Audio/Video
     vlc
