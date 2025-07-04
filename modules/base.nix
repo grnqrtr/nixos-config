@@ -14,7 +14,8 @@
 
   # Set your time zone.
   #time.timeZone = "Asia/Tokyo";
-  time.timeZone = "America/Los_Angeles";
+  #time.timeZone = "America/Los_Angeles";
+  time.timeZone = "America/Anchorage";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
