@@ -15,7 +15,7 @@
   # Set your time zone.
   #time.timeZone = "Asia/Tokyo";
   #time.timeZone = "America/Los_Angeles";
-  time.timeZone = "America/Chicago";
+  time.timeZone = "America/Phoenix";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -30,6 +30,9 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+  # Disable suspend on lid close
+  services.logind.lidSwitchExternalPower = "ignore";
 
   # Services
 
