@@ -85,7 +85,7 @@ in
     shipwright
     _2ship2harkinian
     wargus
-    (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 ]; }) # Minecraft launcher
+    (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 pkgs.temurin-bin-8 ]; }) # Minecraft launcher
     gamescope # For splitscreen
     sidequest
     minetest
