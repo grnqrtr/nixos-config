@@ -13,9 +13,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Set your time zone.
-  #time.timeZone = "Asia/Tokyo";
-  #time.timeZone = "America/Los_Angeles";
-  time.timeZone = "America/Phoenix";
+  time.timeZone = "Asia/Tokyo";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
