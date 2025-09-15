@@ -59,10 +59,6 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
-  # Enable COSMIC
-#  services.desktopManager.cosmic.enable = true;
-#  services.displayManager.cosmic-greeter.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";

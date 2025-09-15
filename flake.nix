@@ -14,9 +14,6 @@
     stylix.url = "github:danth/stylix";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
-    nixpkgs.follows = "nixos-cosmic/nixpkgs"; # NOTE: change "nixpkgs" to "nixpkgs-stable" to use stable NixOS release
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     firefox-csshacks = { 
@@ -26,7 +23,7 @@
 
   };
 
-  outputs = { self, nixpkgs, stableNixpkgs, home-manager, stylix, nixos-cosmic, nixos-hardware, nix-flatpak, firefox-csshacks, ... }@inputs:
+  outputs = { self, nixpkgs, stableNixpkgs, home-manager, stylix, nixos-hardware, nix-flatpak, firefox-csshacks, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -40,13 +37,6 @@
       t480s = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs; };
         modules = [ 
-          {
-            nix.settings = {
-              substituters = [ "https://cosmic.cachix.org/" ];
-              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-            };
-          }
-          nixos-cosmic.nixosModules.default
           ./machines/t480s/configuration.nix
           nixos-hardware.nixosModules.lenovo-thinkpad-t480s
         ];
