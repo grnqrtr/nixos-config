@@ -25,9 +25,9 @@ in
 
   programs.git = {
     enable = true;
-    userName = "grnqrtr";
-    userEmail = "grnqrtr@protonmail.com";
-    extraConfig = {
+    settings = {
+      user.name = "grnqrtr";
+      user.email = "grnqrtr@protonmail.com";
       init.defaultBranch = "master";
     };
   };
@@ -57,12 +57,13 @@ in
     filezilla
     temurin-jre-bin
     inkscape
-    bottles
+    stablePkgs.bottles # Error building unstable
     anki
     obsidian
     gemini-cli
     syncthing
     nh
+    neovim
 
     # Audio/Video
     vlc
@@ -73,7 +74,7 @@ in
 
     # Ebooks
     sigil
-    calibre
+    stablePkgs.calibre  # Error building unstable
 
     # Communications
     discord
