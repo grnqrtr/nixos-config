@@ -71,11 +71,11 @@
     "firefox-csshacks": {
       "flake": false,
       "locked": {
-        "lastModified": 1761274912,
-        "narHash": "sha256-IJRSaERM2yben3OMbCkOtATOdPTN4cdxBCakRqhQg+A=",
+        "lastModified": 1761575451,
+        "narHash": "sha256-YKO/0C+Ihm8IpQDD6B4Pcuhu8fgUuWy3ACXTcve7bfY=",
         "owner": "MrOtherGuy",
         "repo": "firefox-csshacks",
-        "rev": "73d183120b00ac4205db04e83840ea288513e549",
+        "rev": "41d995ac7b79da88c2f6d91784aa511a9b3aea8d",
         "type": "github"
       },
       "original": {
@@ -161,11 +161,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761468550,
-        "narHash": "sha256-nY4vyN1QdHhC5Gj3545fI2Y7FSr/gs8ID4gPmF8HPww=",
+        "lastModified": 1761584077,
+        "narHash": "sha256-dISPEZahlfs5K6d58zR4akRRyogfE9P4WSyPPNT7HiE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1830716059bfee7cbcfbfcc38d7be98e482a5762",
+        "rev": "e82585308aef3d4cc2c36c7b6946051c8cdf24ef",
         "type": "github"
       },
       "original": {

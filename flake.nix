@@ -31,53 +31,47 @@
   in
   {
 
-# Machines
-    
-    nixosConfigurations = {
-      t480s = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; };
-        modules = [ 
-          ./machines/t480s/configuration.nix
-          nixos-hardware.nixosModules.lenovo-thinkpad-t480s
-        ];
-      };
+  # Machines
+  nixosConfigurations = {
+    t480s = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./machines/t480s/configuration.nix
+        nixos-hardware.nixosModules.lenovo-thinkpad-t480s
+      ];
     };
 
-    nixosConfigurations = {
-      x270 = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; };
-        modules = [ 
-          ./machines/x270/configuration.nix
-          nixos-hardware.nixosModules.lenovo-thinkpad-x270
-        ];
-      };
+    x270 = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./machines/x270/configuration.nix
+        nixos-hardware.nixosModules.lenovo-thinkpad-x270
+      ];
+    };
+  };
+
+  # Homes
+  homeConfigurations = {
+    grnqrtr = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = { inherit stablePkgs inputs; };
+      modules = [
+        nix-flatpak.homeManagerModules.nix-flatpak
+        stylix.homeModules.stylix
+        ./homes/grnqrtr/home.nix
+      ];
     };
 
-# Homes
-
-    homeConfigurations = {
-      grnqrtr = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inherit stablePkgs inputs; };
-        modules = [
-          nix-flatpak.homeManagerModules.nix-flatpak
-          stylix.homeModules.stylix
-          ./homes/grnqrtr/home.nix
-        ];
-      };
+    kids = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = { inherit stablePkgs inputs; };
+      modules = [
+        nix-flatpak.homeManagerModules.nix-flatpak
+        stylix.homeModules.stylix
+        ./homes/kids/home.nix
+      ];
     };
-
-    homeConfigurations = {
-      kids = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inherit stablePkgs inputs; };
-        modules = [
-          nix-flatpak.homeManagerModules.nix-flatpak
-          stylix.homeManagerModules.stylix
-          ./homes/kids/home.nix
-        ];
-      };
-    };
+  };
 
   };
 }

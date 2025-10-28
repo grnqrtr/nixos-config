@@ -57,7 +57,7 @@ in
     filezilla
     temurin-jre-bin
     inkscape
-    stablePkgs.bottles # Error building unstable
+    bottles
     anki
     obsidian
     gemini-cli
@@ -74,7 +74,7 @@ in
 
     # Ebooks
     sigil
-    stablePkgs.calibre  # Error building unstable
+    calibre
 
     # Communications
     discord
@@ -85,7 +85,7 @@ in
     # Games
     shipwright
     _2ship2harkinian
-    # wargus # Disabling for now, getting error when building.
+    #wargus # Not building so commenting out.
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 pkgs.temurin-bin-8 ]; }) # Minecraft launcher
     gamescope # For splitscreen
     sidequest
