@@ -61,6 +61,7 @@ in
     anki
     obsidian
     gemini-cli
+    code-cursor-fhs
     syncthing
     nh
     neovim
