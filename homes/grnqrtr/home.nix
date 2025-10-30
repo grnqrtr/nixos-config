@@ -60,11 +60,14 @@ in
     bottles
     anki
     obsidian
-    gemini-cli
-    code-cursor-fhs
     syncthing
     nh
     neovim
+
+    # Ai
+    gemini-cli
+    code-cursor-fhs
+    codex
 
     # Audio/Video
     vlc
