@@ -23,6 +23,10 @@ in
     ../../hm-modules/games/pico8.nix
   ];
 
+  nixpkgs.overlays = [
+    (import ../../overlays/phoenixd-overlay.nix)
+  ];
+
   programs.git = {
     enable = true;
     settings = {
@@ -63,6 +67,7 @@ in
     syncthing
     nh
     neovim
+    phoenixd
 
     # Ai
     gemini-cli
