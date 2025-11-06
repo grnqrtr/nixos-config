@@ -20,7 +20,7 @@
       userChrome = ''
         /* Import your desired components first */
         @import url(chrome/autohide_sidebar.css);
-        @import url(chrome/hide_tabs_toolbar.css);
+        @import url(chrome/autohide_tabstoolbar_v2.css);
 
         /* Apply your custom modifications after imports */
         #sidebar-box #sidebar-header {

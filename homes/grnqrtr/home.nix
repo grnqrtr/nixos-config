@@ -98,14 +98,14 @@ in
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 pkgs.temurin-bin-8 ]; }) # Minecraft launcher
     gamescope # For splitscreen
     sidequest
-    minetest
+    luanti
     lutris
     protonup-qt
     pioneers
 
     # Emulators
     flycast
-    dolphin-emu
+    fceux
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
