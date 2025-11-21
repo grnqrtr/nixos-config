@@ -82,7 +82,7 @@ in
     ffmpeg
 
     # Ebooks
-    sigil
+    stablePkgs.sigil
     calibre
 
     # Communications
