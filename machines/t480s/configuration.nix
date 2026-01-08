@@ -63,9 +63,8 @@
   services.desktopManager.gnome.enable = true;
 
   # Disable tracker (file search) because of error.
-  services.gnome.tracker-miners.enable = false;
-  services.gnome.tracker.enable = false;
-
+  services.gnome.tinysparql.enable = false;
+  services.gnome.localsearch.enable = false;
 
   # Configure keymap in X11
   services.xserver.xkb = {
