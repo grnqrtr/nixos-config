@@ -44,6 +44,8 @@
       noto-fonts-cjk-serif
       zpix-pixel-font
 
+      helvetica-neue-lt-std
+
       montserrat
       nerd-fonts.jetbrains-mono
       font-awesome
@@ -59,6 +61,11 @@
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
+
+  # Disable tracker (file search) because of error.
+  services.gnome.tracker-miners.enable = false;
+  services.gnome.tracker.enable = false;
+
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -130,7 +137,7 @@
   gnomeExtensions.pop-shell
   gnomeExtensions.appindicator
   gnomeExtensions.rounded-window-corners-reborn
-  gnomeExtensions.open-bar
+  gnomeExtensions.hide-top-bar
   pop-icon-theme
 
   ];

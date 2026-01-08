@@ -60,7 +60,6 @@ in
     meld
     filezilla
     temurin-jre-bin
-    inkscape
     bottles
     anki
     obsidian
