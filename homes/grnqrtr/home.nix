@@ -60,7 +60,7 @@ in
     meld
     filezilla
     temurin-jre-bin
-    bottles
+    stablePkgs.bottles # Move to stable to avoid build error
     anki
     obsidian
     syncthing
@@ -102,8 +102,11 @@ in
     protonup-qt
     pioneers
 
+    cwiid
+    xwiimote
+
     # Emulators
-    flycast
+    stablePkgs.flycast # Move to stable to avoid build error
     fceux
 
     # # It is sometimes useful to fine-tune packages, for example, by applying

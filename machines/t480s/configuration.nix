@@ -96,7 +96,7 @@
     isNormalUser = true;
     description = "Travis";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" "scanner" "lp" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" "scanner" "lp" "input" ];
   };
 
   # Enable automatic login for the user.

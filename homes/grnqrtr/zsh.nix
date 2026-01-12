@@ -7,6 +7,8 @@
   programs.zsh = {
     enable = true;
 
+    dotDir = "${config.xdg.configHome}/zsh";
+
     # Define shell aliases
     shellAliases = {
       pass = "/home/grnqrtr/Docker/pass/run.sh";
