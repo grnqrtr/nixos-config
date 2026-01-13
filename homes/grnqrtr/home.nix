@@ -25,6 +25,7 @@ in
 
   nixpkgs.overlays = [
     (import ../../overlays/phoenixd-overlay.nix)
+    (import ../../overlays/xwiimote-mouse-overlay.nix)
   ];
 
   programs.git = {
@@ -104,6 +105,7 @@ in
 
     cwiid
     xwiimote
+    xwiimote-mouse
 
     # Emulators
     stablePkgs.flycast # Move to stable to avoid build error

@@ -12,6 +12,7 @@
       ../../modules/canon-TS8330.nix
       ../../modules/xbox-controller.nix
       ../../modules/reset-psmouse.nix
+      ../../modules/wiimote-mouse.nix
     ];
 
   boot.initrd.luks.devices."luks-87785bc8-18ed-4345-8710-3d0a7d124225".device = "/dev/disk/by-uuid/87785bc8-18ed-4345-8710-3d0a7d124225";

@@ -25,6 +25,8 @@
       flake-edit = "nano /home/grnqrtr/.nixos-config/flake.nix";
       cg = "sudo nix-collect-garbage -d && nix-collect-garbage -d && nix-store --optimise";
       vps = "ssh user@vps";
+      xwiimote-start = "xwiimote-mouse --config-file ~/.config/xwiimote-mouse/wiimote-mouse.conf --socket-path ~/.config/xwiimote-mouse/wiimote-mouse.sock";
+      xwiimote-config = "xwiimote-mouse-config --socket-path ~/.config/xwiimote-mouse/wiimote-mouse.sock";
     };
 
     # Enable oh-my-zsh with theme
