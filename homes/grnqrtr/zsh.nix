@@ -27,6 +27,7 @@
       vps = "ssh user@vps";
       xwiimote-start = "xwiimote-mouse --config-file ~/.config/xwiimote-mouse/wiimote-mouse.conf --socket-path ~/.config/xwiimote-mouse/wiimote-mouse.sock";
       xwiimote-config = "xwiimote-mouse-config --socket-path ~/.config/xwiimote-mouse/wiimote-mouse.sock";
+      xwiigun = "xwiigun-mouse $(xrandr --current | awk '/\\*/ {split($1,a,\\\"x\\\"); print a[1], a[2]; exit}')";
     };
 
     # Enable oh-my-zsh with theme
