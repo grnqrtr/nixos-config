@@ -19,7 +19,7 @@ in
     ./zsh.nix
     ../../hm-modules/tools/vscode.nix
     ../../hm-modules/games/perfectdark.nix
-    ../../hm-modules/games/sm64coopdx.nix
+#    ../../hm-modules/games/sm64coopdx.nix # Error so commenting out for now.
     ../../hm-modules/games/pico8.nix
   ];
 
@@ -112,6 +112,7 @@ in
     # Emulators
     stablePkgs.flycast # Move to stable to avoid build error
     fceux
+    mame
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

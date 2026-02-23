@@ -1,13 +1,16 @@
 { pkgs, ... }:
 
 let
-  sindenLibs = with pkgs; [
-    SDL
-    SDL_image
-    libjpeg8
-    libv4l
-    v4l-utils
-  ];
+  sindenLibs =
+    (with pkgs; [
+      SDL
+      SDL_image
+      libjpeg8
+      libv4l
+      v4l-utils
+      libdecor
+    ])
+    ++ (pkgs.lib.optionals (builtins.hasAttr "libdecor-gtk" pkgs) [ pkgs."libdecor-gtk" ]);
   sindenLdPath = pkgs.lib.makeLibraryPath sindenLibs;
 in
 {

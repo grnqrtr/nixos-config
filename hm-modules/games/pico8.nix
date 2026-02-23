@@ -10,19 +10,19 @@ let
   pico8Shell = pkgs.buildFHSEnv {
     name = "pico8-shell";
     targetPkgs = pkgs: [
-      pkgs.xorg.libX11
-      pkgs.xorg.libXext
-      pkgs.xorg.libXcursor
-      pkgs.xorg.libXinerama
-      pkgs.xorg.libXi
-      pkgs.xorg.libXrandr
-      pkgs.xorg.libXScrnSaver
-      pkgs.xorg.libXxf86vm
-      pkgs.xorg.libxcb
-      pkgs.xorg.libXrender
-      pkgs.xorg.libXfixes
-      pkgs.xorg.libXau
-      pkgs.xorg.libXdmcp
+      pkgs.libX11
+      pkgs.libXext
+      pkgs.libXcursor
+      pkgs.libXinerama
+      pkgs.libXi
+      pkgs.libXrandr
+      pkgs.libXScrnSaver
+      pkgs.libXxf86vm
+      pkgs.libxcb
+      pkgs.libXrender
+      pkgs.libXfixes
+      pkgs.libXau
+      pkgs.libXdmcp
       pkgs.alsa-lib
       pkgs.udev
     ];
