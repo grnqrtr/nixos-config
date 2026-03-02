@@ -69,6 +69,7 @@ in
     nh
     neovim
     phoenixd
+    gpu-screen-recorder-gtk
 
     # Ai
     gemini-cli
@@ -95,7 +96,7 @@ in
     # Games
     shipwright
     _2ship2harkinian
-    #wargus # Not building so commenting out.
+    #wargus
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 pkgs.temurin-bin-8 ]; }) # Minecraft launcher
     gamescope # For splitscreen
     sidequest
