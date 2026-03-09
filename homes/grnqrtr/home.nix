@@ -19,14 +19,14 @@ in
     ./zsh.nix
     ../../hm-modules/tools/vscode.nix
     ../../hm-modules/games/perfectdark.nix
-#    ../../hm-modules/games/sm64coopdx.nix # Error so commenting out for now.
+    ../../hm-modules/games/sm64coopdx.nix
     ../../hm-modules/games/pico8.nix
   ];
 
   nixpkgs.overlays = [
     (import ../../overlays/phoenixd-overlay.nix)
-    (import ../../overlays/xwiimote-mouse-overlay.nix)
-    (import ../../overlays/xwiigun-overlay.nix)
+#    (import ../../overlays/xwiimote-mouse-overlay.nix)
+#    (import ../../overlays/xwiigun-overlay.nix)
   ];
 
   programs.git = {
@@ -85,7 +85,7 @@ in
 
     # Ebooks
     stablePkgs.sigil
-    calibre
+    stablePkgs.calibre
 
     # Communications
     discord
@@ -96,7 +96,7 @@ in
     # Games
     shipwright
     _2ship2harkinian
-    #wargus
+    wargus
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 pkgs.temurin-bin-8 ]; }) # Minecraft launcher
     gamescope # For splitscreen
     sidequest
@@ -105,10 +105,10 @@ in
     protonup-qt
     pioneers
 
-    cwiid
-    xwiimote
-    xwiimote-mouse
-    xwiigun
+#    cwiid
+#    xwiimote
+#    xwiimote-mouse
+#    xwiigun
 
     # Emulators
     stablePkgs.flycast # Move to stable to avoid build error
