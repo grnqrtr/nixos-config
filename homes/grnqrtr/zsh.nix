@@ -24,7 +24,8 @@
       nix-edit = "nano /home/grnqrtr/.nixos-config/machines/t480s/configuration.nix";
       flake-edit = "nano /home/grnqrtr/.nixos-config/flake.nix";
       cg = "sudo nix-collect-garbage -d && nix-collect-garbage -d && nix-store --optimise";
-      vps = "ssh user@vps";
+      lnbits = "ssh user@lnbits";
+      satseer = "ssh user@satseer";
       xwiimote-start = "xwiimote-mouse --config-file ~/.config/xwiimote-mouse/wiimote-mouse.conf --socket-path ~/.config/xwiimote-mouse/wiimote-mouse.sock";
       xwiimote-config = "xwiimote-mouse-config --socket-path ~/.config/xwiimote-mouse/wiimote-mouse.sock";
       xwiigun = "xwiigun-mouse $(xrandr --current | awk '/\\*/ {split($1,a,\\\"x\\\"); print a[1], a[2]; exit}')";

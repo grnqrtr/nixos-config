@@ -70,6 +70,8 @@ in
     neovim
     phoenixd
     gpu-screen-recorder-gtk
+    ffmpeg
+    cdrkit
 
     # Ai
     gemini-cli
