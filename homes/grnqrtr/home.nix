@@ -31,6 +31,7 @@ in
 
   programs.git = {
     enable = true;
+    signing.format = null; # Adopting the new default behavior.
     settings = {
       user.name = "grnqrtr";
       user.email = "grnqrtr@protonmail.com";

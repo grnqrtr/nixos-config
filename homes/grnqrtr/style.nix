@@ -39,4 +39,6 @@
     hint-color-rgba = "rgba(0, 255, 255, 1)";
   };
 
+  gtk.gtk4.theme = null; # Adopting the new default behavior. 
+
 }

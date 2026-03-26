@@ -8,7 +8,7 @@
   imports =
     [ ./hardware-configuration.nix # Include the results of the hardware scan.
       ../../modules/base.nix
-      ../../modules/jp-input-ibus.nix # Japanese Input. Pick jp-input-ibus.nix or jp-input-fcitx5.nix
+      ../../modules/jp-input-fcitx5.nix # Japanese Input. Pick jp-input-ibus.nix or jp-input-fcitx5.nix
       ../../modules/canon-TS8330.nix
       ../../modules/xbox-controller.nix
       ../../modules/reset-psmouse.nix
@@ -148,6 +148,7 @@
   gnomeExtensions.appindicator
   gnomeExtensions.rounded-window-corners-reborn
   gnomeExtensions.hide-top-bar
+  gnomeExtensions.kimpanel
   pop-icon-theme
 
   ];
