@@ -99,7 +99,7 @@ in
     # Games
     shipwright
     _2ship2harkinian
-    wargus
+    #wargus Giving error.
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 pkgs.temurin-bin-8 ]; }) # Minecraft launcher
     gamescope # For splitscreen
     sidequest
