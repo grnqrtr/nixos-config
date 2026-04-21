@@ -97,8 +97,8 @@ in
     zoom-us
 
     # Games
-    shipwright
-    _2ship2harkinian
+#    shipwright
+#    _2ship2harkinian
     #wargus Giving error.
     (prismlauncher.override { jdks = [ pkgs.temurin-bin-21 pkgs.temurin-bin-8 ]; }) # Minecraft launcher
     gamescope # For splitscreen
